@@ -36,7 +36,7 @@ public class BoardQueue {
 
     @Override
     public boolean equals(Object o) {
-        if(previousBoard == null) {
+        if (previousBoard == null) {
             return false;
         }
         return currentBoard.equals(o);
@@ -47,6 +47,6 @@ public class BoardQueue {
     }
 
     public static int compare(BoardQueue board1, BoardQueue board2, int a, int b) {
-        return a*board1.manhattan() + b*board1.numberOfSteps  - a*board2.manhattan() - b*board2.numberOfSteps;
+        return a * board1.manhattan() + b * board1.numberOfSteps - a * board2.manhattan() - b * board2.numberOfSteps;
     }
 }

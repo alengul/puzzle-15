@@ -8,7 +8,6 @@ public class Board {
     int size;
 
 
-
     public Board(int[][] tiles) {
         board = tiles;
         size = tiles.length;
@@ -47,7 +46,7 @@ public class Board {
     public boolean equals(Board y) {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                if(board[i][j] != y.board[i][j]) {
+                if (board[i][j] != y.board[i][j]) {
                     return false;
                 }
             }
