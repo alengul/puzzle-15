@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class AlgoTest {
 
-    Set<BoardQueue> visited = new HashSet<>();
+    static Set<BoardQueue> visited = new HashSet<>();
 
     @BeforeEach
     public void cleanVisited() {
@@ -81,7 +81,7 @@ public class AlgoTest {
     }
 
 
-    public Board generateNewBoardBySteps(int n, int numOfSteps) {
+    public static Board generateNewBoardBySteps(int n, int numOfSteps) {
         Random rd = new Random();
         int[][] test = new int[n][n];
         List<Integer> arr = new ArrayList<>();
@@ -115,7 +115,7 @@ public class AlgoTest {
         }
     }
 
-    public BoardQueue findGoalBoard(BoardQueue startBoard, int a, int b) {
+    public static BoardQueue findGoalBoard(BoardQueue startBoard, int a, int b) {
         visited.clear();
         PriorityQueue<BoardQueue> queue = new PriorityQueue<>((b1, b2) -> BoardQueue.compare(b1, b2, a, b));
         queue.add(startBoard);
