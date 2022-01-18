@@ -1,4 +1,3 @@
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -50,7 +49,7 @@ public class AlgoTest {
 
     @Test
     public void fourTest10() {
-        int n = 3;
+        int n = 4;
         GoalBoard goalBoard = GoalBoard.BOARD_FOUR;
         Board board = generateNewBoardBySteps(n, (int) 1e5);
         board.show();
@@ -58,6 +57,29 @@ public class AlgoTest {
         BoardQueue resBoard = findGoalBoard(boardQueue, 1, 0);
         showSteps(resBoard);
     }
+
+    @Test
+    public void fiveTest11() {
+        int n = 5;
+        GoalBoard goalBoard = GoalBoard.BOARD_FIVE;
+        Board board = generateNewBoardBySteps(n, (int) 1e5);
+        board.show();
+        BoardQueue boardQueue = new BoardQueue(board, goalBoard);
+        BoardQueue resBoard = findGoalBoard(boardQueue, 1, 1);
+        showSteps(resBoard);
+    }
+
+    @Test
+    public void fiveTest10() {
+        int n = 5;
+        GoalBoard goalBoard = GoalBoard.BOARD_FIVE;
+        Board board = generateNewBoardBySteps(n, (int) 1e5);
+        board.show();
+        BoardQueue boardQueue = new BoardQueue(board, goalBoard);
+        BoardQueue resBoard = findGoalBoard(boardQueue, 1, 0);
+        showSteps(resBoard);
+    }
+
 
     public Board generateNewBoardBySteps(int n, int numOfSteps) {
         Random rd = new Random();

@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class BoardQueue {
@@ -36,10 +37,15 @@ public class BoardQueue {
 
     @Override
     public boolean equals(Object o) {
-        if (previousBoard == null) {
-            return false;
-        }
-        return currentBoard.equals(o);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BoardQueue that = (BoardQueue) o;
+        return currentBoard.equals(that.currentBoard);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(currentBoard);
     }
 
     public void show() {
